@@ -1,6 +1,8 @@
-#!/usr/bin/env python3
-import random
+#!/usr/bin/python3
 
-guess = random.randrange(1, 100)
+number = 50
+guess = int(input(f'Я попробую угадать ваше число. Вы загадали {number}? Нажмите "2", если я угадал. Нажмите "1", если ваше число больше. Нажмите "0", если ваше число меньше. '))
+if guess not in [0, 1, 2]:
+    guess = int(input(f'Вы набрали {guess}. Я ждал от вас 0, 1 или 2. Попробуйте еще раз: '))
 
 print(guess)
