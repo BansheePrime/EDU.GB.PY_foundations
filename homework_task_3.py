@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # Slavic declensions
 
-from http.client import NON_AUTHORITATIVE_INFORMATION
-from urllib.parse import non_hierarchical
-
-
 number = int(input('Пожалуйста, введите число от 1 до 100: '))
 while 1 < number > 100:
     number = int(input(f'Вы ввели {number}. Я только учусь и пока могу работать только с числами от 1 до 100.\nПопробуйте еще раз: '))
@@ -21,9 +17,9 @@ elif number in unus_endings:
 else:
     print(f'Можно сказать, что прибыль {number} процентов.')
 
-print('Вы просили 99 строк? \nПожалуйста...\n')
+print('Вы просили 100 строк? \nПожалуйста...\n')
 
-for i in range(1, 100):
+for i in range(1, 101):
     if i in nihil_endings:
         print(f'{i} процент')
     elif i in unus_endings:
