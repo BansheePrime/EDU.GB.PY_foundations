@@ -5,27 +5,48 @@ odd_range = range(1, 1001, 2)
 
 for i in odd_range:
     odd_list = list(odd_range)
-    power_of = [i ** 3 for i in odd_list]
+    power_of_three = [i ** 3 for i in odd_list]
 
 sums_for_division = []
 
-for j in power_of:
+for j in power_of_three:
     summation = 0
     for digit in str(j):
         summation += int(digit)
     sums_for_division.append(summation)
 
+#print(sums_for_division)
+
+first_batch = []
+
 for h in sums_for_division:
+    if h % 7 == 0:
+        first_batch.append(h)
 
+# print(first_batch)
 
-""" my_list = [11, 23, 41, 62, 89, 0, 10]
-print("The list is : ")
-print(my_list)
-my_result = []
-for elem in my_list:
-   sum_val = 0
-   for digit in str(elem):
-      sum_val += int(digit)
-   my_result.append(sum_val)
-print ("The result after adding the digits is : " )
-print(my_result) """
+first_result = sum(first_batch)
+print(f'FIRST RESULT IS {first_result}')
+
+seven_teenth = []
+for q in power_of_three:
+    x = q + 17
+    seven_teenth.append(x)
+
+# print(seventeenth)
+sums_of_seventeenth = []
+
+for y in seven_teenth:
+    divination = 0
+    for figit in str(y):
+        divination += int(figit)
+    sums_of_seventeenth.append(divination)
+
+second_batch = []
+
+for z in sums_of_seventeenth:
+    if z % 7 ==0:
+        second_batch.append(z)
+
+second_result = sum(second_batch)
+print(f'SECOND RESULT IS {second_result}')
