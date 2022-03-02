@@ -52,3 +52,45 @@ for z in sums_of_seventeenth:
 
 second_result = sum(second_batch)
 print(f'Результат ВТОРОЙ подзадачи по версии К. Маркса: {second_result}')
+
+#!/usr/bin/env python3
+# Неряшливость формулировки задачи вынуждает обратиться к классикам.
+# Версия задания имени Ф. Энгельса
+
+engels_range = range(1, 1001, 2)
+
+for i in engels_range:
+        engels_list = list(engels_range)
+        power_of_three_engels = [i ** 3 for i in engels_list]
+
+# print(power_of_three_engels)
+
+sums_for_engels = []
+
+for j in power_of_three_engels:
+        summation_engels = sum(int(engels) for engels in str(j))
+        if summation_engels % 7 == 0:
+                sums_for_engels.append(j)
+
+first_engels_batch = sum(sums_for_engels)
+print(f'Результат ПЕРВОЙ подзадачи по версии Ф. Энгельса: {first_engels_batch}')
+# print(sums_for_engels)
+# print(len(sums_for_engels))
+
+seventeenth_engels = []
+
+for foo in power_of_three_engels:
+        bar = foo + 17
+        seventeenth_engels.append(bar)
+
+# print(seventeenth_engels)
+
+sums_of_seventeen_engels = []
+
+for eggs in seventeenth_engels:
+        divination_engels = sum(int(marx) for marx in str(eggs))
+        if divination_engels % 7 == 0:
+                sums_of_seventeen_engels.append(eggs)
+
+second_engels_batch = sum(sums_of_seventeen_engels)
+print(f'Результат ВТОРОЙ подзадачи по версии Ф. Энгельса: {second_engels_batch}')
