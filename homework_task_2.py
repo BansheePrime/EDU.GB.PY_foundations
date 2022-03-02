@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-# Math for mid wipe
+# Math for mind wipe
+# Задание нуждается в переформулировке.
+# Прикладываю ДВЕ ВЕРСИИ ответа.
 
 odd_range = range(1, 1001, 2)
 
@@ -26,7 +28,8 @@ for h in sums_for_division:
 # print(first_batch)
 
 first_result = sum(first_batch)
-print(f'FIRST RESULT IS {first_result}')
+print(f'Результат ПЕРВОЙ подзадачи по версии К. Маркса: {first_result}')
+print(f'Результат ПЕРВОЙ подзадачи по версии Ф. Энгельса: {even_more_first_result}')
 
 seven_teenth = []
 for q in power_of_three:
@@ -49,4 +52,5 @@ for z in sums_of_seventeenth:
         second_batch.append(z)
 
 second_result = sum(second_batch)
-print(f'SECOND RESULT IS {second_result}')
+print(f'Результат ВТОРОЙ подзадачи по версии К. Маркса: {second_result}')
+print(f'Результат ВТОРОЙ подзадачи по версии Ф. Энгельса: {even_more_second_result}')
