@@ -30,9 +30,6 @@ for h in sums_for_division:
 first_result = sum(first_batch)
 print(f'Результат ПЕРВОЙ подзадачи по версии К. Маркса: {first_result}')
 
-even_more_first_result = sum(more_first_result)
-print(f'Результат ПЕРВОЙ подзадачи по версии Ф. Энгельса: {even_more_first_result}')
-
 seven_teenth = []
 for q in power_of_three:
     x = q + 17
@@ -55,8 +52,3 @@ for z in sums_of_seventeenth:
 
 second_result = sum(second_batch)
 print(f'Результат ВТОРОЙ подзадачи по версии К. Маркса: {second_result}')
-
-
-
-even_more_second_result = sum(more_second_batch)
-print(f'Результат ВТОРОЙ подзадачи по версии Ф. Энгельса: {even_more_second_result}')
