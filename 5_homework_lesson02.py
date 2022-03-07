@@ -5,8 +5,6 @@
 import random
 
 pricelist = [round(random.uniform(80, 280), 2) for i in range(20)]
-# readable_sorted_down = sorted(pricelist, reverse=True)
-# readable_sorted_up = sorted(pricelist)
 readable_up = []
 readable_down = []
 
@@ -27,8 +25,3 @@ print(*readable_down, sep = ", ")
 print()
 
 print(f'Самые дорогие товары в списке по возрастанию: \n{readable_down[5::-1]}')
-
-# my_list = ['Chucha', 'Mucha', 'Gucha', 'Ducha']
-# print(sorted(my_list))
-# print(id(my_list))
-# print(id(sorted(my_list)))
