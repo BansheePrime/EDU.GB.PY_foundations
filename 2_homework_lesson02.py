@@ -2,7 +2,7 @@
 # Урок 2. Некоторые встроенные типы и операции с ними
 
 my_list = ['в', '5', 'часов', '17', 'минут', 'температура', 'воздуха', 'была', '+5', 'градусов']
-new_list = []
+""" new_list = []
 
 for i in my_list:
     try:
@@ -13,3 +13,7 @@ for i in my_list:
         new_list.append(i)
 
 print(new_list)
+ """
+check_list = []
+
+
