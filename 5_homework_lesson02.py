@@ -15,21 +15,21 @@ readable_down = []
 # Подумать, как из цены получить рубли и копейки, как добавить нули,
 # если, например, получилось 7 копеек или 0 копеек (должно быть 07 коп или 00 коп).
 
-print('Вывод цен через запятую, следуя формату "X руб 00 коп": ')
-# for j in sorted(pricelist):
-for j in pricelist:
+print('Вывод цен по возрастанию через запятую, следуя формату "X руб 00 коп": ')
+for j in sorted(pricelist):
+# for j in pricelist:
     item_price = str(j).split(".")
     readable_pricelist.append(f'{item_price[0].zfill(2)} руб {item_price[-1].zfill(2)} коп')
 
 print(*readable_pricelist, sep = ", ")
 print()
 
-print('Вывод цен по возрастанию без создания списка и с проверкой id: ')
+print('Вывод цен без создания списка и с проверкой id: ')
 print(id(readable_pricelist))
 readable_pricelist.sort()
 print(id(readable_pricelist))
 print(*readable_pricelist, sep = ", ")
-
+print()
 # Вывести цены, отсортированные по возрастанию, новый список не создавать
 # (доказать, что объект списка после сортировки остался тот же).
 
