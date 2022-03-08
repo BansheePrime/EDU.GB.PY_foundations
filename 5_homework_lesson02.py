@@ -24,11 +24,11 @@ for j in sorted(pricelist):
 print(*readable_pricelist, sep = ", ")
 print()
 
-print('Вывод цен без создания списка и с проверкой id: ')
+print('Проверка id: ')
 print(id(readable_pricelist))
 readable_pricelist.sort()
 print(id(readable_pricelist))
-print(*readable_pricelist, sep = ", ")
+# print(*readable_pricelist, sep = ", ")
 print()
 # Вывести цены, отсортированные по возрастанию, новый список не создавать
 # (доказать, что объект списка после сортировки остался тот же).
@@ -42,3 +42,6 @@ print(*readable_down, sep = ", ")
 print()
 
 print(f'Самые дорогие товары в списке по возрастанию: \n{readable_down[5::-1]}')
+
+# Разбор строки с минимумом кода
+# print([f'{int(j)} руб {(j - int(j)) * 100:02.0f} коп' for j in sorted(pricelist)[5::-1]])
