@@ -17,4 +17,34 @@ names_input = ("Акакий", "Модест", "Макарий", "Никифор
 
 def grinder(*names):
     # Операции с именами и начальными буквами
-    dict_keys = []
+    names_initials = []
+    dict_content = []
+    dict_values = []
+    dict_names = {}
+
+    for i in names_input:
+        names_initials.append(i[0])
+        # names_initials = list(dict.fromkeys(names_initials))
+    print(names_initials)
+
+    dict_content = zip(names_initials, names_input)
+    print(tuple(dict_content))
+    x = tuple(dict_content.count('А'))
+    print(x)
+
+# def softer(ini_list, inp_names):
+#     return
+    # for j in names_initials:
+    #     print(x for x in names_input if j.startswith(names_initials))
+    #
+    #     dict_values = [x for x in names_input if x is ]
+    #     if i.startswith(i[0]):
+    #         dict_values.append(i)
+
+
+    # for j_letter, j_name in zip(dict_keys, dict_values):
+    #     dict_names.update({j_letter: j_name})
+    #     print(j_letter, j_name)
+    # print(dict_names)
+
+grinder(names_input)
