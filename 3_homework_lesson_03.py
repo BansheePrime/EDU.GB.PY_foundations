@@ -4,9 +4,10 @@ names_input = ["Акакий", "Модест", "Макарий", "Никифор
 
 
 def grinder(*names):
-    # Операции с именами и начальными буквами
+    # Создание тезауруса
     names_initials = []
     selected_names = []
+    dict_content = {}
 
     for i in names_input:
         names_initials.append(i[0])
@@ -15,11 +16,9 @@ def grinder(*names):
 
     for j in names_initials:
         selection = [k for k in names_input if k.startswith(names_initials[0])]
-        names_initials.remove(j)
+        names_initials.pop(0)
         selected_names.append(selection)
-    print(selected_names)
-
-    x = zip(names_initials, selected_names)
-    print(list(x))
+        dict_content.update({j: selection})
+    return print(dict_content)
 
 grinder(names_input)
