@@ -20,7 +20,8 @@ else:
 def get_jokes(some_number, repeat_key):
     '''
     Генератор шуток по спискам слов "Петросян 3.0"
-    :param words: количество шуток
+    :param some_number: количество шуток
+    :param repeat_key: допустимы или нет повторы слов
     :return: anekdot.ru
     '''
     i = 0
@@ -38,7 +39,7 @@ def get_jokes(some_number, repeat_key):
             joker.append(joke)
     else:
         for i in range(some_number):
-            joke = (f'{random.choice(nouns)} {random.choice(adverbs)} {random.choice(adjectives)}')
+            joke = f'{random.choice(nouns)} {random.choice(adverbs)} {random.choice(adjectives)}'
             i += 1
             joker.append(joke)
     return print(joker)
