@@ -6,4 +6,4 @@ for i in range(len(random_list) - 1):
     if random_list[i] < random_list[i + 1]:
         result_list.append(random_list[i + 1])
 
-print(result_list)
+print(result_list[1:])
