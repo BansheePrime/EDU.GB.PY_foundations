@@ -27,7 +27,10 @@ for surname in full_name:
 
 result_dict = dict(zip(fio_list, hobby_name))
 result_dict = {key: result_dict.get(key, None) for key in fio_list}
-print(result_dict)
+# print(result_dict)
+
+with open('result.txt', 'w') as f:
+    print(result_dict, file=f)
 
 if len(full_name) < len(hobby_name):
     print(f'Хобби больше, чем людей. Exit code "1"')
