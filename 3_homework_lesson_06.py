@@ -1,16 +1,34 @@
 #!/usr/bin/env python3
+full_name = []
+fio_list = []
+hobby_name = []
+sur_name = []
+result_dict = {}
+
 fio_file = open('users.csv')
 for line in fio_file:
-    full_name = (line.split(','))
-    print(full_name)
+    full_name.append(line.strip().split(','))
 fio_file.close()
+# print(full_name)
 
 hobby_file = open('hobby.csv')
-for h_line in hobby_file:
-    hobby_name = (h_line.strip().split(','))
-    print(hobby_name)
+for hobby_line in hobby_file:
+    hobby_name = (hobby_line.strip().split(','))
 hobby_file.close()
+# print(hobby_name)
 
-# useful_data = {}
-# useful_data = dict.fromkeys(full_name, hobby_name)
-# print(useful_data)
+for fio in full_name:
+    fio_list.append(str('').join(fio))
+# print(fio_list)
+
+for surname in full_name:
+    sur_name.append(surname[0])
+# print(sur_name)
+
+# result_dict = {fio_list[i]: hobby_name[i] for i in range(len(fio_list))}
+result_dict = dict(zip(fio_list, hobby_name))
+print(result_dict)
+
+if len(full_name) < len(hobby_name):
+    print(f'Хобби больше, чем людей. Exit code "1"')
+
