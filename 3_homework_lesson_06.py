@@ -25,8 +25,8 @@ for surname in full_name:
     sur_name.append(surname[0])
 # print(sur_name)
 
-# result_dict = {fio_list[i]: hobby_name[i] for i in range(len(fio_list))}
-result_dict = dict(zip(fio_list, hobby_name)).setdefault('None')
+result_dict = dict(zip(fio_list, hobby_name))
+result_dict = {key: result_dict.get(key, None) for key in fio_list}
 print(result_dict)
 
 if len(full_name) < len(hobby_name):
