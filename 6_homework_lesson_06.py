@@ -58,5 +58,5 @@ with open('bakery.csv', 'r', encoding='utf-8') as file:
     else:
         file.seek(0)
         for line in file:
-            print(line.replace(";", ""), end = '')
+            print(line.replace(";", ""), end='')
         print()
