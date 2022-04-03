@@ -2,6 +2,8 @@
 #
 import sys
 
+operation_lines = []
+
 print(f'Гроссбух пекарни "Мёртвый попугай".  Версия ПО: {sys.argv[0]}')
 print('''
 Режимы работы ПО:
@@ -12,7 +14,7 @@ print('''
 
 if len(sys.argv) == 3:
     working_mode = 3
-    print(f'Пользователь передал два аргумента. {str(sys.argv[1:])}'
+    print(f'Пользователь передал два аргумента. {(str(sys.argv[1:]))}'
           f'\nГроссбух "Мёртвый попугай" работает в режиме 3.'
           f'\nОжидается вывод записей с номера, равного первому числу, по номер, равный второму числу, включительно.')
 elif len(sys.argv) == 2:
@@ -28,9 +30,33 @@ elif len(sys.argv) == 1:
 else:
     working_mode = 'error'
     print(f'Пользователь передал больше ожидаемого числа аргументов.')
+    exit(1)
 
-# print(working_mode)
-# print(str(sys.argv))
+with open('bakery.csv', 'r', encoding='utf-8') as file:
+    lines_number = sum(1 for line in file)
+    if working_mode == 3:
+        file.seek(0)
+        start_line = int(sys.argv[1])
+        end_line = int(sys.argv[-1])
+        if start_line > 0 and end_line <= lines_number:
+            for line in file:
+                operation_lines.append(line.replace(';', '').strip())
+            print('\n'.join(map(str, operation_lines[start_line - 1:end_line])))
+        else:
+            print(f'\nВнимание, пользователь!'
+                f'\nВведите число больше единицы и меньше или равно числу {lines_number}')
 
-# with open('bakery.csv', 'a+', encoding='utf-8') as file:
-#     file.seek(0)
+    elif working_mode == 2:
+        file.seek(0)
+        start_line = int(sys.argv[1])
+        if start_line > 0 and start_line < lines_number:
+            for line in file:
+                operation_lines.append(line.replace(';', '').strip())
+            print('\n'.join(map(str, operation_lines[start_line - 1:])))
+        else:
+            print(f'Введите число меньше числа продаж, которое равно: {lines_number}')
+    else:
+        file.seek(0)
+        for line in file:
+            print(line.replace(";", ""), end = '')
+        print()
