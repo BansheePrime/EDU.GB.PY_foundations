@@ -1,37 +1,18 @@
 #!/usr/bin/env python3
-full_name = []
-fio_list = []
-hobby_name = []
-sur_name = []
-result_dict = {}
+# Разбор решения преподавателя
+from itertools import zip_longest
 
-fio_file = open('users.csv')
-for line in fio_file:
-    full_name.append(line.strip().split(','))
-fio_file.close()
-# print(full_name)
+with open('user_hobby.txt', 'w', encoding='utf-8') as f:
+    with open('users.csv', encoding='utf-8') as users_list:
+        with open('hobby.csv', encoding='utf-8') as hobby_list:
+            users_lines_quantity = sum(1 for line in users_list)
+            hobby_lines_quantity = sum(1 for line in hobby_list)
 
-hobby_file = open('hobby.csv')
-for hobby_line in hobby_file:
-    hobby_name = (hobby_line.strip().split(','))
-hobby_file.close()
-# print(hobby_name)
+            if users_lines_quantity < hobby_lines_quantity:
+                exit(1)
 
-for fio in full_name:
-    fio_list.append(str('').join(fio))
-# print(fio_list)
-
-for surname in full_name:
-    sur_name.append(surname[0])
-# print(sur_name)
-
-result_dict = dict(zip(fio_list, hobby_name))
-result_dict = {key: result_dict.get(key, None) for key in fio_list}
-# print(result_dict)
-
-with open('result.txt', 'w') as f:
-    print(result_dict, file=f)
-
-if len(full_name) < len(hobby_name):
-    print(f'Хобби больше, чем людей. Exit code "1"')
-
+            users_list.seek(0)
+            hobby_list.seek(0)
+            for line_users, line_hobbies in zip_longest(users_list, hobby_list):
+                f.write(f'{line_users.strip()}: '
+                        f'{line_hobbies.strip() if line_hobbies is not None else line_hobbies}\n')
