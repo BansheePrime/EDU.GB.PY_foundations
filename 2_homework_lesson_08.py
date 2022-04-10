@@ -10,3 +10,11 @@ import re
 # <requested_resource> "(\/.{9}\/.{9})"gm ## очень плохо ориентироваться на кол-во символов
 # <response_code> "\s(\d{3})\s"gm
 # <response_size> "\d{3}\s(\d+)"gm
+
+REMOTE_ADDR = re.compile(r'^(?:[0-9]{1,3}\.){3}[0-9]{1,3}')
+REQ_DATETIME = re.compile(r'\[(.*?)\]')
+REQ_TYPE = re.compile(r'([A-Z]{3,})')
+REQ_RESOURCE = re.compile(r'(\/.{9}\/.{9})')
+REQ_CODE = re.compile(r'\s(\d{3})\s')
+REQ_SIZE = re.compile(r'\d{3}\s(\d+)')
+

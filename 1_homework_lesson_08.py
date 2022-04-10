@@ -15,9 +15,12 @@ def email_parse(email_address):
         email_address = email_address.split('@')
         result_dict.update({email_address[0]: email_address[1]})
     else:
+        # pass
         raise ValueError
     return result_dict
 
-
-print(email_parse('asd@asd.asd'))
-print(email_parse('фыв@фыв.фыв'))
+try:
+    print(email_parse('asd@asd.asd'))
+    print(email_parse('фыв@фыв.фыв'))
+except ValueError as error:
+    print(f'Ошибка: {str(error)}')
