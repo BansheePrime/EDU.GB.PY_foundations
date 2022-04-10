@@ -1,20 +1,25 @@
-# def print_human_name(human):
-#     print(human['name'])
-#
-#
-# h1 = {'name': 'QWE'}
-# h2 = {'name': 'ASD'}
-# h3 = {'name': 'ZXC'}
-#
-# print(h1)
-# print(h2)
-# print(h3)
+import time
 
-class Phone:
-    def call(self):
-        print('calling')
+# def countdown(t):
+#     real = t
+#     while t > 0:
+#         CURSOR_UP = '\033[F'
+#         ERASE_LINE = '\033[K'
+#         if t == real:
+#             print(ERASE_LINE + 'Duration : {}s'.format(t))
+#         else:
+#             print(CURSOR_UP + ERASE_LINE + 'Duration : {}s'.format(t))
+#         time.sleep(1)
+#         t -= 1
+#
+# countdown(4)
 
-phone1 = Phone()
-phone2 = Phone()
-phone1.call()
-phone2.call()
+# for n in range(5):
+#     print('\r', n, end='')
+#     time.sleep(1)
+
+
+for i in range(7, -1, -1):
+    time.sleep(1)
+    print(f'\r{i}', end='')
+
