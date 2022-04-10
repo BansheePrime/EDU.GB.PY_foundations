@@ -1,5 +1,6 @@
 some_data/
 testing_nginx_logs.txt
+parsing_nginx_logs.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
