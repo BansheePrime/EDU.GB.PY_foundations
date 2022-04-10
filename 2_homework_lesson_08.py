@@ -2,6 +2,7 @@
 # Урок 8. Декораторы
 # Задание 2
 import re
+import os
 
 # Валидация ip4 адресов через regex требует особой тщательности
 # https://regex101.com/
@@ -23,3 +24,12 @@ REQ_SIZE = re.compile(r'\d{3}\s(\d+)')
 
 
 def log_parser(raw_line):
+    parsed_data = (re.search(r'^(?:[0-9]{1,3}\.){3}[0-9]{1,3}', raw_line))
+    return parsed_data
+
+
+# with open('testing_nginx_logs.txt') as file:
+#     raw_line = file.readline()
+#     parsed_raw = log_parser(raw_line)
+#     with open('parsing_nginx_logs.txt', 'a') as result:
+#         result.write(parsed_raw)
