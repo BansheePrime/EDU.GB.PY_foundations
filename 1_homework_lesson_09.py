@@ -3,10 +3,11 @@
 # Задание 1
 class TrafficLight:
     def __init__(self):
-        self.__color = ('красный', 'желтый', 'зеленый')
+        self.__color = color
 
 
     def running(self):
+        return color
 
 
 
