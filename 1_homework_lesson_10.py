@@ -7,7 +7,7 @@ class Matrix:
         self.input = input_data
 
     def __str__(self):
-        return '\n\\'.join([' '.join(map(str, line)) for line in self.input])
+        return '\n'.join([' '.join(map(str, line)) for line in self.input])
 
     def __add__(self, other):
         answer = ''
